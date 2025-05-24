@@ -1,6 +1,6 @@
 package org.kehrbusch.odoo;
 
-import org.kehrbusch.util.ConnectionException;
+import org.kehrbusch.util.exceptions.ConnectionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

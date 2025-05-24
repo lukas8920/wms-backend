@@ -1,6 +1,6 @@
 package org.kehrbusch;
 
-import org.kehrbusch.util.BadRequestException;
+import org.kehrbusch.util.exceptions.BadRequestException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;

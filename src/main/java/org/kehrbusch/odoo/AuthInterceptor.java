@@ -4,10 +4,10 @@ import jakarta.annotation.PostConstruct;
 import org.apache.xmlrpc.XmlRpcException;
 import org.apache.xmlrpc.client.XmlRpcClient;
 import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
-import org.kehrbusch.util.ConnectionException;
+import org.kehrbusch.util.exceptions.ConnectionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.net.URL;
@@ -20,22 +20,24 @@ import java.util.Map;
 public class AuthInterceptor {
     private static final Logger logger = LoggerFactory.getLogger(AuthInterceptor.class);
 
-    @Value("${odoo.url}")
-    private String url;
-    @Value("${odoo.database}")
-    private String database;
-    @Value("${odoo.user}")
-    private String user;
-    @Value("${odoo.password}")
-    private String password;
+    private final String url;
+    private final String database;
+    private final String user;
+    private final String password;
 
     private int uid;
     private final XmlRpcClient authClient;
     private final XmlRpcClient objectClient;
 
-    public AuthInterceptor(){
+    public AuthInterceptor(@Qualifier("odooApi") String odooApi, @Qualifier("odooDbName") String odooDbName,
+                           @Qualifier("odooApiUser") String odooApiUser, @Qualifier("odooApiPw") String odooApiPw){
         this.authClient = new XmlRpcClient();
         this.objectClient = new XmlRpcClient();
+
+        this.url = odooApi;
+        this.database = odooDbName;
+        this.user = odooApiUser;
+        this.password = odooApiPw;
     }
 
     @PostConstruct

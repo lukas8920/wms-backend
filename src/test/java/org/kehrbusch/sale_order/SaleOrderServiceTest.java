@@ -6,9 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.kehrbusch.odoo.*;
 import org.kehrbusch.sale_order.entities.SaleLine;
 import org.kehrbusch.sale_order.entities.SaleOrder;
-import org.kehrbusch.util.BadRequestException;
-import org.kehrbusch.util.ConnectionException;
-import org.kehrbusch.util.InvalidResultException;
+import org.kehrbusch.util.exceptions.BadRequestException;
+import org.kehrbusch.util.exceptions.ConnectionException;
+import org.kehrbusch.util.exceptions.InvalidResultException;
 
 import java.util.List;
 

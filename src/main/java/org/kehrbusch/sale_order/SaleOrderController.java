@@ -1,7 +1,7 @@
 package org.kehrbusch.sale_order;
 
 import org.kehrbusch.sale_order.entities.SaleOrder;
-import org.kehrbusch.util.BadRequestException;
+import org.kehrbusch.util.exceptions.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
