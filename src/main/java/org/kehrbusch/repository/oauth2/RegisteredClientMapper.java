@@ -34,7 +34,7 @@ public class RegisteredClientMapper {
             builder.authorizationGrantType(new AuthorizationGrantType(grantType.trim()));
         }
 
-        long seconds = Long.valueOf(oAuth2RegisteredClient.getTokenDuration());
+        long seconds = oAuth2RegisteredClient.getTokenDuration();
         Duration duration = Duration.ofSeconds(seconds);
         ClientSettings clientSettings = ClientSettings.builder()
                 .settings(settingsMap -> settingsMap.put(tokenDurationIdentifier, duration))
@@ -69,7 +69,7 @@ public class RegisteredClientMapper {
         oAuth2RegisteredClient.setAuthorizationGrantTypes(authorizationGrantTypes);
 
         Duration duration = registeredClient.getClientSettings().getSetting(tokenDurationIdentifier);
-        oAuth2RegisteredClient.setTokenDuration((int) duration.getSeconds());
+        oAuth2RegisteredClient.setTokenDuration(duration.getSeconds());
 
         return oAuth2RegisteredClient;
     }

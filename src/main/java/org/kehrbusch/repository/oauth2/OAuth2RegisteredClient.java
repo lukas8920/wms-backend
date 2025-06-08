@@ -49,7 +49,7 @@ public class OAuth2RegisteredClient {
     @Column(name = "scope")
     private List<String> scopes;
     @Column(name = "token_duration")
-    private Integer tokenDuration;
+    private Long tokenDuration;
     @Column(name = "client_name")
     private String clientName;
 }
