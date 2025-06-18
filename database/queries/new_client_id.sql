@@ -34,5 +34,5 @@ insert into wms.oauth2_scopes (
 )
 values (
            'c4d53a1c-95e3-4f04-8a4d-b672dc02c9ef',
-           'read'
+           'write:sale'
        )
