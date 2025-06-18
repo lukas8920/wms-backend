@@ -1,0 +1,5 @@
+create user penth16odoo with password 'jW12fu76Y53RqYvGYox4b1v4B';
+create database pentaho;
+GRANT CONNECT ON DATABASE pentaho TO penth16odoo;
+GRANT USAGE ON SCHEMA odoo to penth16odoo;
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA odoo TO penth16odoo;
