@@ -2,6 +2,14 @@
 
 **wms-backend** is a backend service designed to support integration with Odoo's Warehouse Management System (WMS), with a current focus on importing sales orders. The system is implemented in Java and follows a modular, service-oriented architecture for extensibility and maintainability.
 
+## Prerequisites
+
+This service requires the following external services to be running and accessible:
+
+- PostgreSQL
+- Odoo
+- HashiCorp Vault
+
 ## Features
 
 - **Sales Order Import:**
