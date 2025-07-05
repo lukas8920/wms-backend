@@ -16,6 +16,18 @@
     - Provides detailed error responses for invalid requests or system errors.
     - All operations are logged for traceability.
 
+## Logging and Monitoring
+
+For end-to-end visibility across both the **wms-backend** service and associated Odoo services, we recommend using [odoo-logging](https://github.com/lukas8920/odoo-logging).
+
+**odoo-logging** provides centralized logging for both this backend and Odoo, enabling you to:
+
+- Aggregate logs from the wms-backend and Odoo instances into a single dashboard.
+- Correlate API calls and background tasks between systems.
+- Monitor errors, warnings, and performance metrics across the integrated stack.
+
+See the [odoo-logging documentation](https://github.com/lukas8920/odoo-logging) for setup instructions and integration steps.
+
 ## Technology Stack
 
 - **Language:** Java
